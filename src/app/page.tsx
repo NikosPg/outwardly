@@ -1,15 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const EMAIL = "hello@outwardly.net";
 const PHONE = "+306945415350";
 
 const translations = {
   el: {
-    switchLabel: "EN",
-    switchAria: "Switch to English",
     hero: {
       heading: "Χτίζουμε custom ψηφιακές εμπειρίες και λογισμικό για την ομάδα σας.",
       body: "Από τη στρατηγική έως την υποστήριξη, η ομάδα μας σχεδιάζει, υλοποιεί και εξελίσσει την παρουσία σας στο διαδίκτυο. Μιλάμε τη γλώσσα της επιχείρησης και μεταφράζουμε τις ανάγκες σας σε κώδικα, design και μετρήσιμα αποτελέσματα.",
@@ -210,8 +209,6 @@ const translations = {
     },
   },
   en: {
-    switchLabel: "ΕΛ",
-    switchAria: "Switch to Greek",
     hero: {
       heading: "We craft custom digital experiences and software for your team.",
       body: "From strategy to support, our team designs, builds, and evolves your online presence. We speak the language of business and translate your needs into code, design, and measurable outcomes.",
@@ -415,10 +412,45 @@ const translations = {
 
 type Locale = keyof typeof translations;
 
+const LOCALE_SWITCH: Record<Locale, { label: string; aria: string; next: Locale }> = {
+  el: { label: "EN", aria: "Switch to English", next: "en" },
+  en: { label: "ΕΛ", aria: "Switch to Greek", next: "el" },
+};
+
 export default function Home() {
-  const [locale, setLocale] = useState<Locale>("el");
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const [locale, setLocaleState] = useState<Locale>(() =>
+    searchParams.get("lang") === "en" ? "en" : "el",
+  );
+
+  useEffect(() => {
+    const paramLocale = searchParams.get("lang") === "en" ? "en" : "el";
+    setLocaleState(paramLocale);
+  }, [searchParams]);
+
+  const handleLocaleChange = useCallback(
+    (nextLocale: Locale) => {
+      setLocaleState(nextLocale);
+      const params = new URLSearchParams(searchParams.toString());
+      if (nextLocale === "el") {
+        params.delete("lang");
+      } else {
+        params.set("lang", nextLocale);
+      }
+      const queryString = params.toString();
+      router.replace(queryString ? `${pathname}?${queryString}` : pathname, {
+        scroll: false,
+      });
+    },
+    [pathname, router, searchParams],
+  );
+
   const t = translations[locale];
-  const alternateLocale = locale === "el" ? "en" : "el";
+
+  const introHref = useMemo(() => (locale === "en" ? "/intro?lang=en" : "/intro"), [locale]);
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
@@ -426,11 +458,11 @@ export default function Home() {
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(37,99,235,0.22)_0%,_transparent_58%)]" />
         <button
           type="button"
-          onClick={() => setLocale(alternateLocale)}
+          onClick={() => handleLocaleChange(LOCALE_SWITCH[locale].next)}
           className="absolute right-6 top-6 inline-flex items-center justify-center rounded-full border border-[var(--accent)]/40 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--accent)] shadow-sm backdrop-blur transition hover:bg-white"
-          aria-label={t.switchAria}
+          aria-label={LOCALE_SWITCH[locale].aria}
         >
-          {t.switchLabel}
+          {LOCALE_SWITCH[locale].label}
         </button>
         <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-24 pt-16 sm:pb-28 sm:pt-24 lg:flex-row lg:items-center lg:gap-20 lg:px-8">
           <div className="flex-1 space-y-6">
@@ -595,7 +627,7 @@ export default function Home() {
                 </span>
                 <h3 className="text-lg font-semibold text-stone-800">{step.title}</h3>
                 <p className="text-sm text-stone-600">{step.text}</p>
-                {step.highlight ? (
+                {"highlight" in step && step.highlight ? (
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">{step.highlight}</p>
                 ) : null}
               </div>
@@ -654,7 +686,7 @@ export default function Home() {
               </a>
               <a
                 className="inline-flex items-center justify-center rounded-full border border-[var(--accent)] px-6 py-3 text-sm font-semibold text-[var(--accent)] transition hover:bg-[var(--accent)] hover:text-white"
-                href="/intro"
+                href={introHref}
               >
                 {t.contact.introCta}
               </a>
@@ -683,7 +715,7 @@ export default function Home() {
             <a className="block hover:text-[var(--accent)]" href={`mailto:${EMAIL}`}>
               {EMAIL}
             </a>
-            <a className="block hover:text-[var(--accent)]" href="/intro">
+            <a className="block hover:text-[var(--accent)]" href={introHref}>
               {t.footer.introCta}
             </a>
           </div>

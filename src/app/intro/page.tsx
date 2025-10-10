@@ -7,10 +7,11 @@ export const metadata: Metadata = {
     "Κλείστε ένα σύντομο intro call με την ομάδα της OutWardly και ξεκινήστε τη συζήτηση για το επόμενο ψηφιακό σας project.",
 };
 
-export default function IntroPage() {
+export default function IntroPage({ searchParams }: { searchParams: { lang?: string } }) {
+  const defaultLocale = searchParams?.lang === "en" ? "en" : "el";
   return (
     <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-      <IntroContent defaultLocale="el" />
+      <IntroContent defaultLocale={defaultLocale} />
     </main>
   );
 }
