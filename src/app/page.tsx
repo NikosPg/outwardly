@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const EMAIL = "hello@outwardly.net";
@@ -418,6 +418,14 @@ const LOCALE_SWITCH: Record<Locale, { label: string; aria: string; next: Locale 
 };
 
 export default function Home() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[var(--background)]" />}>
+      <HomeContent />
+    </Suspense>
+  );
+}
+
+function HomeContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
