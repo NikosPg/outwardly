@@ -19,12 +19,12 @@ export const metadata: Metadata = {
   },
   description:
     "OutWardly σχεδιάζει ψηφιακές εμπειρίες, websites και custom λογισμικό με focus στην απόδοση και τη στρατηγική.",
-  metadataBase: new URL("https://outwardly.gr"),
+  metadataBase: new URL("https://outwardly.net"),
   openGraph: {
     title: "OutWardly – Creative Studio & Custom Software",
     description:
       "Αναλαμβάνουμε end-to-end ανάπτυξη web projects, custom λογισμικό και φιλοξενία για ομάδες που χρειάζονται αξιόπιστη digital παρουσία.",
-    url: "https://outwardly.gr",
+    url: "https://outwardly.net",
     siteName: "OutWardly",
     locale: "el_GR",
     type: "website",
