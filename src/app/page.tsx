@@ -90,18 +90,15 @@ export default function Home() {
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(37,99,235,0.22)_0%,_transparent_58%)]" />
         <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-24 pt-16 sm:pb-28 sm:pt-24 lg:flex-row lg:items-center lg:gap-20 lg:px-8">
           <div className="flex-1 space-y-6">
-            <div className="flex flex-col gap-3">
+            <div>
               <Image
                 src="/OutWardly_logo.png"
                 alt="OutWardly logo"
                 width={1024}
                 height={1024}
                 priority
-                className="self-start rounded-xl shadow-lg"
+                className="max-w-full rounded-xl shadow-lg"
               />
-              <span className="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--accent)]">
-                Digital Creative Studio
-              </span>
             </div>
             <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
               Χτίζουμε αξιόπιστες ψηφιακές εμπειρίες για την πρώτη σας εταιρία.
