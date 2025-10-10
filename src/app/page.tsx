@@ -3,6 +3,16 @@ import Image from "next/image";
 export default function Home() {
   const services = [
     {
+      emoji: "🚀",
+      title: "Custom Λογισμικό",
+      paragraphs: [
+        "Σχεδιάζουμε και υλοποιούμε web εφαρμογές, portals και εσωτερικά συστήματα προσαρμοσμένα στις ροές της ομάδας σου.",
+        "Ξεκινάμε με discovery workshops, service blueprints και τεχνική ανάλυση ώστε κάθε feature να απαντά σε πραγματική ανάγκη.",
+        "Παραδίδουμε με agile iterations, CI/CD pipelines και τεχνική τεκμηρίωση που επιτρέπει στην ομάδα σου να εξελίσσει το προϊόν.",
+      ],
+      tagline: "→ MVPs, enterprise εργαλεία και αυτοματισμοί ραμμένοι στα μέτρα σου.",
+    },
+    {
       emoji: "🕸️",
       title: "Web Design & Development",
       paragraphs: [
@@ -101,7 +111,7 @@ export default function Home() {
               />
             </div>
             <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
-              Χτίζουμε αξιόπιστες ψηφιακές εμπειρίες για την πρώτη σας εταιρία.
+              Χτίζουμε custom ψηφιακές εμπειρίες και λογισμικό για την ομάδα σας.
             </h1>
             <p className="max-w-2xl text-base text-stone-700 sm:text-lg">
               Από τη στρατηγική έως την υποστήριξη, η ομάδα μας σχεδιάζει,
@@ -143,6 +153,62 @@ export default function Home() {
       </header>
 
       <main className="mx-auto flex max-w-6xl flex-col gap-24 px-6 py-16 sm:px-8">
+        <section className="grid gap-8 rounded-3xl border border-[var(--accent)]/30 bg-gradient-to-br from-white via-[#eef3ff] to-[#dbe7ff] p-10 shadow-lg lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          <div className="space-y-6">
+            <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">
+              Custom Software Delivery
+            </p>
+            <h2 className="text-3xl font-semibold sm:text-4xl">
+              Από την ιδέα σε παραγωγή με end-to-end ανάπτυξη λογισμικού.
+            </h2>
+            <p className="text-base text-stone-600 sm:text-lg">
+              Συνδυάζουμε product discovery, UX design και full-stack ανάπτυξη για να υλοποιήσουμε εργαλεία που λύνουν
+              συγκεκριμένα επιχειρησιακά προβλήματα. Σχεδιάζουμε αρχιτεκτονική, στήνουμε pipelines και παραδίδουμε
+              συνεχείς εκδόσεις που μετρούν πραγματικά KPIs.
+            </p>
+            <ul className="space-y-3 text-sm text-stone-700">
+              <li className="flex items-start gap-3">
+                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]" />
+                MVPs, portals και integrations με ERP / CRM / third-party APIs.
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]" />
+                Τεχνικός σχεδιασμός, roadmaps ανά sprint και διαφάνεια σε κάθε release.
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]" />
+                DevOps + QA πρακτικές: CI/CD, automated testing και observability by default.
+              </li>
+            </ul>
+          </div>
+          <div className="grid gap-4 rounded-3xl border border-white/60 bg-white/80 p-6 shadow-lg backdrop-blur">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--accent)]">
+                Tech Stack
+              </p>
+              <p className="mt-2 text-sm text-stone-600">
+                Next.js, Node.js, TypeScript, PostgreSQL, Prisma, Supabase, AWS, Vercel.
+              </p>
+            </div>
+            <div className="border-t border-stone-200/70 pt-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--accent)]">
+                Delivery
+              </p>
+              <p className="mt-2 text-sm text-stone-600">
+                Sprint-based υλοποίηση με εβδομαδιαία demos και shared dashboards για metrics.
+              </p>
+            </div>
+            <div className="border-t border-stone-200/70 pt-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--accent)]">
+                Συνέχεια
+              </p>
+              <p className="mt-2 text-sm text-stone-600">
+                SLA, υποστήριξη και R&D retainer ώστε το προϊόν να εξελίσσεται μαζί με την αγορά.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section id="services" className="space-y-10">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -294,10 +360,18 @@ export default function Home() {
             <li className="flex items-start gap-3 rounded-2xl border border-stone-900/10 bg-[#eef3ff] p-4">
               <span className="mt-0.5 text-lg text-[var(--accent)]">◆</span>
               <div>
+                <p className="font-semibold text-stone-900">Product & Engineering Squad</p>
+                <p className="text-stone-600">
+                  Cross-functional ομάδα (product, design, dev, DevOps) που αναλαμβάνει discovery μέχρι rollout.
+                </p>
+              </div>
+            </li>
+            <li className="flex items-start gap-3 rounded-2xl border border-stone-900/10 bg-[#eef3ff] p-4">
+              <span className="mt-0.5 text-lg text-[var(--accent)]">◆</span>
+              <div>
                 <p className="font-semibold text-stone-900">Performance-first</p>
                 <p className="text-stone-600">
-                  Lighthouse 90+ ως προεπιλογή με συνεχές monitoring και
-                  βελτιστοποιήσεις SEO.
+                  Lighthouse 90+, API benchmarks και observability dashboards με πραγματικά metrics.
                 </p>
               </div>
             </li>
@@ -378,22 +452,24 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-6 px-6 py-8 text-sm text-stone-600 sm:grid-cols-3 sm:px-8">
           <div className="space-y-1 text-stone-700">
             <p className="font-semibold text-stone-900">© 2025 Outwardly</p>
-            <p>ΑΦΜ: [συμπλήρωσέ το]</p>
+            <p>ΑΦΜ: 116201133</p>
             <p>ΔΟΥ: Πατρών</p>
           </div>
           <div className="space-y-1">
             <p>ΚΑΔ: 62.01.11.01 – Υπηρεσίες σχεδίασης και ανάπτυξης ιστοσελίδων</p>
             <p>ΚΑΔ: 63.11.11.00 – Υπηρεσίες φιλοξενίας ιστοσελίδων</p>
+            <p>ΚΑΔ: 62.01.21.01 – Υπηρεσίες ανάπτυξης λογισμικού με βάση τις ανάγκες του πελάτη</p>
           </div>
           <div className="space-y-1">
-            <a className="block hover:text-[var(--accent)]" href="#services">
-              Υπηρεσίες
-            </a>
-            <a className="block hover:text-[var(--accent)]" href="#contact">
-              Επικοινωνία
+            <p className="font-semibold text-stone-900">Επικοινωνία</p>
+            <a className="block hover:text-[var(--accent)]" href="tel:+306945415350">
+              +30 694 541 5350
             </a>
             <a className="block hover:text-[var(--accent)]" href="mailto:hello@outwardly.gr">
               hello@outwardly.gr
+            </a>
+            <a className="block hover:text-[var(--accent)]" href="/intro">
+              Κλείστε intro call →
             </a>
           </div>
         </div>
