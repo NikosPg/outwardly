@@ -111,12 +111,20 @@ const translations = {
       label: "Projects",
       heading: "Websites που ήδη ζουν εκεί έξω.",
       description:
-        "Δύο συνεργασίες που δείχνουν τι σημαίνει OutWardly στην πράξη: από marketplace πλατφόρμες μέχρι media εμπειρίες με χιλιάδες χρήστες.",
+        "Μερικές συνεργασίες που δείχνουν τι σημαίνει OutWardly στην πράξη: από marketplace πλατφόρμες μέχρι media εμπειρίες με χιλιάδες χρήστες.",
       primaryButton: "Συνεργασία",
       secondaryLink: "Θέλω να συζητήσουμε →",
       mailtoSubject: "Νέο project για το portfolio",
     },
     projects: [
+      {
+        title: "dinalingerie.gr",
+        subtitle: "E-commerce • Lingerie",
+        description:
+          "Χτίζουμε το νέο e-commerce για lingerie με καθαρή εμπειρία αγορών, omnichannel integrations και storytelling που αναδεικνύει το brand.",
+        cta: "Σε εξέλιξη",
+        href: "https://dinalingerie.gr",
+      },
       {
         title: "findteacher.gr",
         subtitle: "Marketplace • Εκπαίδευση",
@@ -311,12 +319,20 @@ const translations = {
       label: "Projects",
       heading: "Websites already out in the wild.",
       description:
-        "Two collaborations that show what OutWardly means in practice: from marketplace platforms to media experiences serving thousands of users.",
+        "A few collaborations that show what OutWardly means in practice: from marketplace platforms to media experiences serving thousands of users.",
       primaryButton: "Start a project",
       secondaryLink: "Let's talk →",
       mailtoSubject: "New project for the portfolio",
     },
     projects: [
+      {
+        title: "dinalingerie.gr",
+        subtitle: "E-commerce • Lingerie",
+        description:
+          "We are crafting the new lingerie e-commerce experience with clean UX, omnichannel integrations, and storytelling that elevates the brand.",
+        cta: "In progress",
+        href: "https://dinalingerie.gr",
+      },
       {
         title: "findteacher.gr",
         subtitle: "Marketplace • Education",
