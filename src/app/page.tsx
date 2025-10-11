@@ -37,7 +37,7 @@ const translations = {
       infoBlocks: [
         {
           title: "Tech Stack",
-          body: "Next.js, Node.js, TypeScript, PostgreSQL, Prisma, Supabase, AWS, Vercel.",
+          body: "Next.js, Django (για μεγάλα eshop), Node.js, TypeScript, PostgreSQL, Prisma, Supabase, AWS, Vercel.",
         },
         {
           title: "Delivery",
@@ -74,7 +74,7 @@ const translations = {
         paragraphs: [
           "Φτιάχνουμε καθαρές, γρήγορες, ουσιαστικές ιστοσελίδες.",
           "Χωρίς περιττά animations, χωρίς corporate φλυαρία.",
-          "Χτίζουμε με Next.js, Tailwind, και προσοχή στη λεπτομέρεια — για να φορτώνει γρήγορα, να δείχνει όμορφα και να λειτουργεί για τους ανθρώπους που τη χρησιμοποιούν.",
+          "Χτίζουμε με Next.js και Tailwind, και για μεγάλα eshop αξιοποιούμε Django — για να φορτώνει γρήγορα, να δείχνει όμορφα και να λειτουργεί για τους ανθρώπους που τη χρησιμοποιούν.",
         ],
         tagline: "→ Websites που δεν χρειάζονται manual.",
       },
@@ -245,7 +245,7 @@ const translations = {
       infoBlocks: [
         {
           title: "Tech stack",
-          body: "Next.js, Node.js, TypeScript, PostgreSQL, Prisma, Supabase, AWS, Vercel.",
+          body: "Next.js, Django (for large e-commerce), Node.js, TypeScript, PostgreSQL, Prisma, Supabase, AWS, Vercel.",
         },
         {
           title: "Delivery",
@@ -282,7 +282,7 @@ const translations = {
         paragraphs: [
           "We build clean, fast, meaningful websites.",
           "No gratuitous animations, no corporate jargon.",
-          "We use Next.js, Tailwind, and attention to detail—so it loads quickly, looks great, and works for the people who use it.",
+          "We use Next.js and Tailwind, and bring in Django for large e-commerce builds—so it loads quickly, looks great, and works for the people who use it.",
         ],
         tagline: "→ Websites that never need a manual.",
       },
