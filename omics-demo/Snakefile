@@ -1,0 +1,127 @@
+"""
+RNA-seq Analysis Pipeline with Snakemake
+OutWardly Bioinformatics Demo
+"""
+
+configfile: "config.yaml"
+
+# Sample IDs from config
+SAMPLES = config["samples"]
+
+# Final output files
+rule all:
+    input:
+        "results/multiqc_report.html",
+        "results/counts_matrix.csv",
+        "results/deseq2_results.csv",
+        "results/pca_plot.png",
+        "results/volcano_plot.png",
+        "results/metadata.db"
+
+# Quality control with FastQC
+rule fastqc:
+    input:
+        "data/raw/{sample}.fastq.gz"
+    output:
+        html="results/qc/{sample}_fastqc.html",
+        zip="results/qc/{sample}_fastqc.zip"
+    threads: 2
+    shell:
+        "fastqc {input} -o results/qc/ -t {threads}"
+
+# Aggregate QC reports with MultiQC
+rule multiqc:
+    input:
+        expand("results/qc/{sample}_fastqc.zip", sample=SAMPLES)
+    output:
+        "results/multiqc_report.html"
+    shell:
+        "multiqc results/qc/ -o results/"
+
+# Read alignment with STAR
+rule align:
+    input:
+        fastq="data/raw/{sample}.fastq.gz",
+        index=config["star_index"]
+    output:
+        bam="results/aligned/{sample}.Aligned.sortedByCoord.out.bam",
+        log="results/aligned/{sample}.Log.final.out"
+    threads: 8
+    params:
+        prefix="results/aligned/{sample}."
+    shell:
+        """
+        STAR --runThreadN {threads} \
+             --genomeDir {input.index} \
+             --readFilesIn {input.fastq} \
+             --readFilesCommand zcat \
+             --outFileNamePrefix {params.prefix} \
+             --outSAMtype BAM SortedByCoordinate \
+             --quantMode GeneCounts
+        """
+
+# Count features with featureCounts
+rule count_features:
+    input:
+        bam=expand("results/aligned/{sample}.Aligned.sortedByCoord.out.bam", sample=SAMPLES),
+        gtf=config["annotation_gtf"]
+    output:
+        counts="results/counts_matrix.txt"
+    threads: 4
+    shell:
+        """
+        featureCounts -T {threads} \
+                      -a {input.gtf} \
+                      -o {output.counts} \
+                      {input.bam}
+        """
+
+# Convert counts to CSV and prepare for analysis
+rule prepare_counts:
+    input:
+        "results/counts_matrix.txt"
+    output:
+        "results/counts_matrix.csv"
+    script:
+        "scripts/preprocess.py"
+
+# Differential expression analysis with DESeq2
+rule deseq2_analysis:
+    input:
+        counts="results/counts_matrix.csv",
+        metadata=config["sample_metadata"]
+    output:
+        results="results/deseq2_results.csv",
+        normalized="results/normalized_counts.csv"
+    script:
+        "scripts/deseq2_analysis.R"
+
+# Generate PCA plot
+rule pca_plot:
+    input:
+        counts="results/normalized_counts.csv",
+        metadata=config["sample_metadata"]
+    output:
+        "results/pca_plot.png"
+    script:
+        "scripts/visualization.py"
+
+# Generate volcano plot
+rule volcano_plot:
+    input:
+        "results/deseq2_results.csv"
+    output:
+        "results/volcano_plot.png"
+    script:
+        "scripts/visualization.py"
+
+# Store metadata in database
+rule store_metadata:
+    input:
+        counts="results/counts_matrix.csv",
+        deseq="results/deseq2_results.csv",
+        metadata=config["sample_metadata"]
+    output:
+        "results/metadata.db"
+    script:
+        "scripts/db_utils.py"

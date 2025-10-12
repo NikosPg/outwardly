@@ -1,0 +1,71 @@
+# RNA-seq Analysis Pipeline .gitignore
+
+# Data files (too large for git)
+data/raw/*.fastq
+data/raw/*.fastq.gz
+data/raw/*.fq
+data/raw/*.fq.gz
+data/processed/
+*.bam
+*.bam.bai
+*.sam
+
+# Results
+results/
+*.png
+*.pdf
+*.html
+*.zip
+
+# Reference genomes and indexes (large files)
+references/
+*.fa
+*.fasta
+*.gtf
+*.gff
+*.idx
+STAR_index/
+
+# Database files
+*.db
+*.sqlite
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# R
+.Rhistory
+.RData
+.Rproj.user
+
+# Snakemake
+.snakemake/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp

@@ -1,0 +1,57 @@
+# RNA-seq Pipeline Configuration
+
+# Sample information
+samples:
+  - control_rep1
+  - control_rep2
+  - control_rep3
+  - treated_rep1
+  - treated_rep2
+  - treated_rep3
+
+# Reference genome and annotation
+star_index: "/path/to/STAR/genome/index"
+annotation_gtf: "/path/to/gencode.v44.annotation.gtf"
+reference_fasta: "/path/to/GRCh38.primary_assembly.genome.fa"
+
+# Sample metadata file
+sample_metadata: "data/sample_metadata.csv"
+
+# Database configuration
+database:
+  type: "duckdb"  # or "postgresql"
+  path: "results/metadata.db"
+  # For PostgreSQL:
+  # host: "localhost"
+  # port: 5432
+  # user: "omics_user"
+  # password: "secure_password"
+  # database: "rnaseq_db"
+
+# Analysis parameters
+deseq2:
+  design_formula: "~ condition"
+  contrast:
+    - "condition"
+    - "treated"
+    - "control"
+  alpha: 0.05
+  lfc_threshold: 1.0
+
+# Quality filters
+filters:
+  min_reads: 10
+  min_samples: 2
+
+# Visualization settings
+plots:
+  pca:
+    n_components: 2
+    top_genes: 500
+  volcano:
+    pval_threshold: 0.05
+    lfc_threshold: 1.0
+    highlight_genes:
+      - "TP53"
+      - "MYC"
+      - "BRCA1"

@@ -106,6 +106,16 @@ const translations = {
         ],
         tagline: "→ Ό,τι χρειάζεσαι, χωρίς περιττά layers.",
       },
+      {
+        emoji: "🧬",
+        title: "Omics & Bioinformatics",
+        paragraphs: [
+          "Ειδικευόμαστε σε genomics, transcriptomics, proteomics, metabolomics και epigenomics.",
+          "Χτίζουμε reproducible workflows με Snakemake και Nextflow, αναλύουμε δημόσια datasets (RNA-seq, ChIP-seq, WGS) και εξάγουμε expression matrices.",
+          "Στατιστική ανάλυση με Python/Pandas/SciPy/DESeq2, metadata σε PostgreSQL ή DuckDB, και custom dashboards για visualization.",
+        ],
+        tagline: "→ Data engineering + AI + web tech για τις omics επιστήμες.",
+      },
     ],
     projectsSection: {
       label: "Projects",
@@ -313,6 +323,16 @@ const translations = {
           "We simplify your processes with logic, not buzzwords.",
         ],
         tagline: "→ Exactly what you need, without extra layers.",
+      },
+      {
+        emoji: "🧬",
+        title: "Omics & Bioinformatics",
+        paragraphs: [
+          "We specialize in genomics, transcriptomics, proteomics, metabolomics, and epigenomics.",
+          "We build reproducible workflows with Snakemake and Nextflow, analyze public datasets (RNA-seq, ChIP-seq, WGS), and extract expression matrices.",
+          "Statistical analysis with Python/Pandas/SciPy/DESeq2, metadata in PostgreSQL or DuckDB, and custom dashboards for visualization.",
+        ],
+        tagline: "→ Data engineering + AI + web tech for omics sciences.",
       },
     ],
     projectsSection: {

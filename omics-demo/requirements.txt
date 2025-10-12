@@ -1,0 +1,30 @@
+# Python dependencies for RNA-seq analysis pipeline
+
+# Core scientific computing
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.10.0
+
+# Bioinformatics
+biopython>=1.81
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Machine learning
+scikit-learn>=1.3.0
+
+# Database
+duckdb>=0.9.0
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0  # For PostgreSQL support
+
+# Data validation
+pyyaml>=6.0
+
+# Workflow
+snakemake>=7.32.0
+
+# Quality control (optional, can be installed via conda)
+# multiqc>=1.14

@@ -1,0 +1,7 @@
+sample_id,condition,replicate,batch,sequencing_date
+control_rep1,control,1,batch1,2024-01-15
+control_rep2,control,2,batch1,2024-01-15
+control_rep3,control,3,batch2,2024-01-20
+treated_rep1,treated,1,batch1,2024-01-15
+treated_rep2,treated,2,batch1,2024-01-15
+treated_rep3,treated,3,batch2,2024-01-20
