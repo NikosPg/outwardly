@@ -115,6 +115,7 @@ const translations = {
           "Στατιστική ανάλυση με Python/Pandas/SciPy/DESeq2, metadata σε PostgreSQL ή DuckDB, και custom dashboards για visualization.",
         ],
         tagline: "→ Data engineering + AI + web tech για τις omics επιστήμες.",
+        demoLink: "/omics-demo",
       },
     ],
     projectsSection: {
@@ -333,6 +334,7 @@ const translations = {
           "Statistical analysis with Python/Pandas/SciPy/DESeq2, metadata in PostgreSQL or DuckDB, and custom dashboards for visualization.",
         ],
         tagline: "→ Data engineering + AI + web tech for omics sciences.",
+        demoLink: "/omics-demo",
       },
     ],
     projectsSection: {
@@ -607,6 +609,14 @@ function HomeContent() {
                   ))}
                 </div>
                 <p className="text-sm font-semibold text-[var(--accent)]">{service.tagline}</p>
+                {"demoLink" in service && service.demoLink && (
+                  <a
+                    href={service.demoLink}
+                    className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] transition hover:text-[var(--accent-dark)]"
+                  >
+                    View Interactive Demo →
+                  </a>
+                )}
               </div>
             ))}
           </div>
