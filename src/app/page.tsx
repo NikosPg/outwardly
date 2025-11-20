@@ -152,6 +152,14 @@ const translations = {
         cta: "Δες το project →",
         href: "https://radioportal.me",
       },
+      {
+        title: "314project.gr",
+        subtitle: "Events • Hospitality",
+        description:
+          "Δημιουργήσαμε την ψηφιακή παρουσία ενός πολυχώρου εκδηλώσεων, εκθέσεων και καφέ μπαρ με έμφαση στο storytelling, την εμπειρία του χρήστη και την εύκολη πλοήγηση.",
+        cta: "Δες το project →",
+        href: "https://314project.gr",
+      },
     ],
     methodology: {
       label: "Μεθοδολογία",
@@ -371,6 +379,14 @@ const translations = {
           "We refreshed the radio streaming hub with a custom player, real-time schedule updates, and SEO-first architecture that serves thousands of listeners without downtime.",
         cta: "View project →",
         href: "https://radioportal.me",
+      },
+      {
+        title: "314project.gr",
+        subtitle: "Events • Hospitality",
+        description:
+          "We created the digital presence for a multifunctional event space, exhibition venue, and café bar with focus on storytelling, user experience, and seamless navigation.",
+        cta: "View project →",
+        href: "https://314project.gr",
       },
     ],
     methodology: {
