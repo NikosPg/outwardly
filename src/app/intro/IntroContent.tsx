@@ -88,24 +88,17 @@ export function IntroContent({ defaultLocale }: { defaultLocale: Locale }) {
         <p className="text-base text-stone-600 sm:text-lg">{t.body}</p>
       </header>
 
-      <section className="overflow-hidden rounded-3xl border border-stone-900/10 bg-white shadow-lg">
-        <iframe
-          src="https://cal.com/ekfansis/intro?embed=1&primaryColor=c0392b"
-          title="ΕΚΦΑΝΣΙΣ Intro Call Scheduler"
-          className="h-[720px] w-full"
-          frameBorder="0"
-          allow="camera; microphone; fullscreen"
-          loading="lazy"
-        />
-      </section>
-
-      <p className="text-center text-sm text-stone-500">
-        {t.emailPrompt}{" "}
-        <a className="font-semibold text-[var(--accent)] hover:text-[var(--accent-dark)]" href={`mailto:${EMAIL}`}>
+      <section className="flex flex-col items-center justify-center rounded-3xl border border-stone-900/10 bg-white p-12 shadow-lg">
+        <p className="mb-6 text-center text-lg text-stone-600">
+          {t.emailPrompt}
+        </p>
+        <a
+          className="inline-flex items-center justify-center rounded-full bg-[var(--accent)] px-8 py-4 text-base font-semibold text-white transition hover:bg-[var(--accent-dark)]"
+          href={`mailto:${EMAIL}`}
+        >
           {EMAIL}
         </a>
-        .
-      </p>
+      </section>
     </div>
   );
 }

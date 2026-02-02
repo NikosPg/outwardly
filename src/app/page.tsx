@@ -767,27 +767,18 @@ function HomeContent() {
           className="relative overflow-hidden rounded-3xl border border-[var(--accent)]/30 bg-gradient-to-br from-[#e0ebff] via-[#f3f7ff] to-[var(--background)] p-10"
         >
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_bottom_right,_rgba(37,99,235,0.18)_0%,_transparent_55%)]" />
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-            <div className="space-y-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">{t.contact.label}</p>
-              <h2 className="text-3xl font-semibold sm:text-4xl">{t.contact.heading}</h2>
-              <p className="max-w-2xl text-base text-stone-700 sm:text-lg">{t.contact.description}</p>
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <a
-                  className="inline-flex items-center justify-center rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[var(--accent-dark)]"
-                  href={`mailto:${EMAIL}`}
-                >
-                  {EMAIL}
-                </a>
-                <a
-                  className="inline-flex items-center justify-center rounded-full border border-[var(--accent)] px-6 py-3 text-sm font-semibold text-[var(--accent)] transition hover:bg-[var(--accent)] hover:text-white"
-                  href={introHref}
-                >
-                  {t.contact.introCta}
-                </a>
-              </div>
+          <div className="space-y-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">{t.contact.label}</p>
+            <h2 className="text-3xl font-semibold sm:text-4xl">{t.contact.heading}</h2>
+            <p className="max-w-2xl text-base text-stone-700 sm:text-lg">{t.contact.description}</p>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <a
+                className="inline-flex items-center justify-center rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[var(--accent-dark)]"
+                href={`mailto:${EMAIL}`}
+              >
+                {EMAIL}
+              </a>
             </div>
-            <ContactForm translations={t.contact.form} />
           </div>
         </section>
       </main>
@@ -811,9 +802,6 @@ function HomeContent() {
             </a>
             <a className="block hover:text-[var(--accent)]" href={`mailto:${EMAIL}`}>
               {EMAIL}
-            </a>
-            <a className="block hover:text-[var(--accent)]" href={introHref}>
-              {t.footer.introCta}
             </a>
           </div>
         </div>
