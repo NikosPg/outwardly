@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-const EMAIL = "nikospg@gmail.com";
+const EMAIL = "ekfansis@gmail.com";
 
 const translations = {
   el: {

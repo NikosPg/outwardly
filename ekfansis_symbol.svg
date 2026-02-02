@@ -1,0 +1,67 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="400" fill="#FAFAFA"/>
+  
+  <!-- Symbol centered -->
+  <g transform="translate(200, 200)">
+    <!-- Outer circle - gradual opacity representing coming-into-being -->
+    <circle cx="0" cy="0" r="120" 
+            stroke="#2C3E50" 
+            stroke-width="2" 
+            fill="none" 
+            opacity="0.15"/>
+    
+    <circle cx="0" cy="0" r="100" 
+            stroke="#34495E" 
+            stroke-width="3" 
+            fill="none" 
+            opacity="0.3"/>
+    
+    <circle cx="0" cy="0" r="80" 
+            stroke="#1A252F" 
+            stroke-width="4" 
+            fill="none" 
+            opacity="0.5"/>
+    
+    <!-- Main manifestation circle -->
+    <circle cx="0" cy="0" r="60" 
+            stroke="#0A1014" 
+            stroke-width="6" 
+            fill="none" 
+            opacity="1.0"/>
+    
+    <!-- Auto-affection spiral - the self-affecting movement of life -->
+    <path d="M 0,0 
+             Q 20,-20 40,-15 
+             T 55,5 
+             T 50,35 
+             T 25,50 
+             T -5,52 
+             T -35,42 
+             T -50,20 
+             T -48,-10 
+             T -30,-35 
+             T -5,-45 
+             T 20,-40 
+             T 35,-20" 
+          stroke="#E74C3C" 
+          stroke-width="3" 
+          fill="none" 
+          opacity="0.75"/>
+    
+    <!-- Secondary spiral - continuous self-affection -->
+    <path d="M 0,0 
+             Q -15,15 -25,10 
+             T -30,-5 
+             T -20,-20 
+             T 0,-22" 
+          stroke="#C0392B" 
+          stroke-width="2.5" 
+          fill="none" 
+          opacity="0.6"/>
+    
+    <!-- The immanent point - origin of manifestation -->
+    <circle cx="0" cy="0" r="8" fill="#C0392B"/>
+    <circle cx="0" cy="0" r="4" fill="#E74C3C"/>
+  </g>
+</svg>
