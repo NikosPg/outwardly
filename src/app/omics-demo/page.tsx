@@ -57,7 +57,7 @@ export default function OmicsDemo() {
               href="/"
               className="text-sm font-semibold text-[var(--accent)] hover:text-[var(--accent-dark)]"
             >
-              ← Back to OutWardly
+              ← Back to ΕΚΦΑΝΣΙΣ
             </Link>
             <span className="text-xs uppercase tracking-[0.2em] text-stone-500">
               Interactive Demo
@@ -250,7 +250,7 @@ export default function OmicsDemo() {
           </p>
           <div className="mt-6 flex justify-center gap-4">
             <a
-              href="mailto:hello@outwardly.net?subject=Omics%20Services%20Inquiry"
+              href="mailto:nikospg@gmail.com?subject=Omics%20Services%20Inquiry"
               className="inline-flex items-center justify-center rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[var(--accent-dark)]"
             >
               Contact Us

@@ -15,24 +15,24 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "OutWardly – Creative Studio & Custom Software",
-    template: "%s • OutWardly",
+    default: "ΕΚΦΑΝΣΙΣ – Creative Studio & Custom Software",
+    template: "%s • ΕΚΦΑΝΣΙΣ",
   },
   description:
-    "OutWardly σχεδιάζει ψηφιακές εμπειρίες, websites και custom λογισμικό με focus στην απόδοση και τη στρατηγική.",
-  metadataBase: new URL("https://outwardly.net"),
+    "Η ΕΚΦΑΝΣΙΣ σχεδιάζει ψηφιακές εμπειρίες, websites και custom λογισμικό με focus στην απόδοση και τη στρατηγική.",
+  metadataBase: new URL("https://ekfansis.com"),
   openGraph: {
-    title: "OutWardly – Creative Studio & Custom Software",
+    title: "ΕΚΦΑΝΣΙΣ – Creative Studio & Custom Software",
     description:
       "Αναλαμβάνουμε end-to-end ανάπτυξη web projects, custom λογισμικό και φιλοξενία για ομάδες που χρειάζονται αξιόπιστη digital παρουσία.",
-    url: "https://outwardly.net",
-    siteName: "OutWardly",
+    url: "https://ekfansis.com",
+    siteName: "ΕΚΦΑΝΣΙΣ",
     locale: "el_GR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "OutWardly – Creative Studio & Custom Software",
+    title: "ΕΚΦΑΝΣΙΣ – Creative Studio & Custom Software",
     description:
       "Στρατηγική, design, ανάπτυξη και φιλοξενία σε ένα ενιαίο digital studio.",
   },

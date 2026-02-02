@@ -1,0 +1,76 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#FAFAFA"/>
+  
+  <!-- Symbol: Emerging Circle - Auto-affection concept -->
+  <!-- The circle emerges from nothingness, representing phenomenological manifestation -->
+  <g transform="translate(200, 200)">
+    <!-- Outer fading arc - the potential -->
+    <path d="M -60,0 A 60,60 0 0,1 0,-60" 
+          stroke="#2C3E50" 
+          stroke-width="2" 
+          fill="none" 
+          opacity="0.2"/>
+    
+    <!-- Middle arc - becoming -->
+    <path d="M 0,-60 A 60,60 0 0,1 60,0" 
+          stroke="#34495E" 
+          stroke-width="3" 
+          fill="none" 
+          opacity="0.5"/>
+    
+    <!-- Strong arc - manifestation -->
+    <path d="M 60,0 A 60,60 0 0,1 0,60" 
+          stroke="#1A252F" 
+          stroke-width="4" 
+          fill="none" 
+          opacity="0.8"/>
+    
+    <!-- Complete arc - full appearance (ek-fansis) -->
+    <path d="M 0,60 A 60,60 0 0,1 -60,0" 
+          stroke="#0A1014" 
+          stroke-width="5" 
+          fill="none" 
+          opacity="1.0"/>
+    
+    <!-- Inner spiral - auto-affection, the self touching itself -->
+    <path d="M 0,0 Q 15,-15 30,-10 T 40,10 T 30,30 T 0,35 T -25,25 T -30,0 T -20,-20 T 0,-25" 
+          stroke="#E74C3C" 
+          stroke-width="2" 
+          fill="none" 
+          opacity="0.7"/>
+    
+    <!-- Central point - the immanent origin -->
+    <circle cx="0" cy="0" r="4" fill="#C0392B"/>
+  </g>
+  
+  <!-- Text: ΕΚΦΑΝΣΙΣ -->
+  <text x="320" y="190" 
+        font-family="'Helvetica Neue', Arial, sans-serif" 
+        font-size="52" 
+        font-weight="300" 
+        letter-spacing="8" 
+        fill="#1A252F">
+    ΕΚΦΑΝΣΙΣ
+  </text>
+  
+  <!-- Subtitle: creative studio -->
+  <text x="320" y="220" 
+        font-family="'Helvetica Neue', Arial, sans-serif" 
+        font-size="16" 
+        font-weight="300" 
+        letter-spacing="6" 
+        fill="#7F8C8D">
+    CREATIVE STUDIO
+  </text>
+  
+  <!-- Philosophical quote marker (optional subtle element) -->
+  <text x="320" y="250" 
+        font-family="Georgia, serif" 
+        font-size="11" 
+        font-style="italic" 
+        fill="#95A5A6" 
+        opacity="0.6">
+    ἐκ-φαίνω · to bring to light, to manifest
+  </text>
+</svg>

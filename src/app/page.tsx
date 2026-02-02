@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-const EMAIL = "hello@outwardly.net";
+const EMAIL = "nikospg@gmail.com";
 const PHONE = "+306945415350";
 
 const translations = {
@@ -122,7 +122,7 @@ const translations = {
       label: "Projects",
       heading: "Websites που ήδη ζουν εκεί έξω.",
       description:
-        "Μερικές συνεργασίες που δείχνουν τι σημαίνει OutWardly στην πράξη: από marketplace πλατφόρμες μέχρι media εμπειρίες με χιλιάδες χρήστες.",
+        "Μερικές συνεργασίες που δείχνουν τι σημαίνει ΕΚΦΑΝΣΙΣ στην πράξη: από marketplace πλατφόρμες μέχρι media εμπειρίες με χιλιάδες χρήστες.",
       primaryButton: "Συνεργασία",
       secondaryLink: "Θέλω να συζητήσουμε →",
       mailtoSubject: "Νέο project για το portfolio",
@@ -211,7 +211,7 @@ const translations = {
       heading: "Μια μικρή ομάδα με βαθύ χρόνο για τα project της.",
       paragraphs: [
         "Η τεχνολογία δεν χρειάζεται να είναι απρόσωπη.",
-        "Η OutWardly είναι ένας μικρός, αυτόνομος κόμβος δημιουργίας.",
+        "Η ΕΚΦΑΝΣΙΣ είναι ένα μικρό, αυτόνομο creative studio.",
         "Χτίζουμε πράγματα που έχουν λόγο ύπαρξης — όχι απλώς “παρουσία στο web”.",
       ],
     },
@@ -221,6 +221,16 @@ const translations = {
       description:
         "Στείλτε μας μια σύντομη περιγραφή των στόχων σας και θα επιστρέψουμε με πρόταση, χρονοδιάγραμμα και ενδεικτικό προϋπολογισμό μέσα σε 2 εργάσιμες ημέρες.",
       introCta: "Κλείστε intro call →",
+      form: {
+        name: "Όνομα",
+        email: "Email",
+        company: "Εταιρεία (προαιρετικό)",
+        message: "Περιγράψτε το project σας",
+        submit: "Αποστολή μηνύματος",
+        sending: "Αποστολή...",
+        success: "Ευχαριστούμε! Θα επικοινωνήσουμε σύντομα.",
+        error: "Κάτι πήγε στραβά. Δοκιμάστε ξανά ή στείλτε email.",
+      },
     },
     footer: {
       taxId: "ΑΦΜ: 116201133",
@@ -350,7 +360,7 @@ const translations = {
       label: "Projects",
       heading: "Websites already out in the wild.",
       description:
-        "A few collaborations that show what OutWardly means in practice: from marketplace platforms to media experiences serving thousands of users.",
+        "A few collaborations that show what EKFANSIS means in practice: from marketplace platforms to media experiences serving thousands of users.",
       primaryButton: "Start a project",
       secondaryLink: "Let's talk →",
       mailtoSubject: "New project for the portfolio",
@@ -439,16 +449,26 @@ const translations = {
       heading: "A small team with deep focus for every project.",
       paragraphs: [
         "Technology doesn’t have to feel impersonal.",
-        "OutWardly is a small, autonomous hub of creation.",
+        "EKFANSIS is a small, autonomous creative studio.",
         "We build things that have a reason to exist—not just a “web presence.”",
       ],
     },
     contact: {
       label: "Contact",
-      heading: "Start a project that speaks your market’s language.",
+      heading: "Start a project that speaks your market's language.",
       description:
-        "Send us a short outline of your goals and we’ll reply with a proposal, timeline, and indicative budget within two business days.",
+        "Send us a short outline of your goals and we'll reply with a proposal, timeline, and indicative budget within two business days.",
       introCta: "Schedule intro call →",
+      form: {
+        name: "Name",
+        email: "Email",
+        company: "Company (optional)",
+        message: "Describe your project",
+        submit: "Send message",
+        sending: "Sending...",
+        success: "Thank you! We'll be in touch soon.",
+        error: "Something went wrong. Please try again or send an email.",
+      },
     },
     footer: {
       taxId: "VAT ID: 116201133",
@@ -528,18 +548,19 @@ function HomeContent() {
         >
           {LOCALE_SWITCH[locale].label}
         </button>
-        <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-24 pt-16 sm:pb-28 sm:pt-24 lg:flex-row lg:items-center lg:gap-20 lg:px-8">
+        <div className="mx-auto max-w-6xl px-6 pb-24 pt-16 sm:pb-28 sm:pt-24 lg:px-8">
+          <div className="mb-12">
+            <Image
+              src="/ekfansis-logo.svg"
+              alt="ΕΚΦΑΝΣΙΣ logo"
+              width={800}
+              height={400}
+              priority
+              className="mx-auto w-full max-w-5xl"
+            />
+          </div>
+          <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-20">
           <div className="flex-1 space-y-6">
-            <div>
-              <Image
-                src="/OutWardly_logo.png"
-                alt="OutWardly logo"
-                width={1024}
-                height={1024}
-                priority
-                className="max-w-full rounded-xl shadow-lg"
-              />
-            </div>
             <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">{t.hero.heading}</h1>
             <p className="max-w-2xl text-base text-stone-700 sm:text-lg">{t.hero.body}</p>
             <div className="flex flex-col gap-3 sm:flex-row">
@@ -565,6 +586,7 @@ function HomeContent() {
                 <li key={bullet}>• {bullet}</li>
               ))}
             </ul>
+          </div>
           </div>
         </div>
       </header>
@@ -745,24 +767,27 @@ function HomeContent() {
           className="relative overflow-hidden rounded-3xl border border-[var(--accent)]/30 bg-gradient-to-br from-[#e0ebff] via-[#f3f7ff] to-[var(--background)] p-10"
         >
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_bottom_right,_rgba(37,99,235,0.18)_0%,_transparent_55%)]" />
-          <div className="space-y-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">{t.contact.label}</p>
-            <h2 className="text-3xl font-semibold sm:text-4xl">{t.contact.heading}</h2>
-            <p className="max-w-2xl text-base text-stone-700 sm:text-lg">{t.contact.description}</p>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <a
-                className="inline-flex items-center justify-center rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[var(--accent-dark)]"
-                href={`mailto:${EMAIL}`}
-              >
-                {EMAIL}
-              </a>
-              <a
-                className="inline-flex items-center justify-center rounded-full border border-[var(--accent)] px-6 py-3 text-sm font-semibold text-[var(--accent)] transition hover:bg-[var(--accent)] hover:text-white"
-                href={introHref}
-              >
-                {t.contact.introCta}
-              </a>
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+            <div className="space-y-6">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">{t.contact.label}</p>
+              <h2 className="text-3xl font-semibold sm:text-4xl">{t.contact.heading}</h2>
+              <p className="max-w-2xl text-base text-stone-700 sm:text-lg">{t.contact.description}</p>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <a
+                  className="inline-flex items-center justify-center rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[var(--accent-dark)]"
+                  href={`mailto:${EMAIL}`}
+                >
+                  {EMAIL}
+                </a>
+                <a
+                  className="inline-flex items-center justify-center rounded-full border border-[var(--accent)] px-6 py-3 text-sm font-semibold text-[var(--accent)] transition hover:bg-[var(--accent)] hover:text-white"
+                  href={introHref}
+                >
+                  {t.contact.introCta}
+                </a>
+              </div>
             </div>
+            <ContactForm translations={t.contact.form} />
           </div>
         </section>
       </main>
@@ -770,7 +795,7 @@ function HomeContent() {
       <footer className="border-t border-stone-300 bg-[#e7edff]">
         <div className="mx-auto grid max-w-6xl gap-6 px-6 py-8 text-sm text-stone-600 sm:grid-cols-3 sm:px-8">
           <div className="space-y-1 text-stone-700">
-            <p className="font-semibold text-stone-900">© 2025 Outwardly</p>
+            <p className="font-semibold text-stone-900">© 2025 ΕΚΦΑΝΣΙΣ</p>
             <p>{t.footer.taxId}</p>
             <p>{t.footer.taxOffice}</p>
           </div>
@@ -794,5 +819,125 @@ function HomeContent() {
         </div>
       </footer>
     </div>
+  );
+}
+
+interface ContactFormProps {
+  translations: {
+    name: string;
+    email: string;
+    company: string;
+    message: string;
+    submit: string;
+    sending: string;
+    success: string;
+    error: string;
+  };
+}
+
+function ContactForm({ translations: t }: ContactFormProps) {
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xzzeddpn", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-5 rounded-2xl border border-white/60 bg-white/90 p-6 shadow-lg backdrop-blur"
+    >
+      <div className="space-y-4">
+        <div>
+          <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-stone-700">
+            {t.name}
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            className="w-full rounded-xl border border-stone-200 bg-white px-4 py-3 text-sm text-stone-900 transition placeholder:text-stone-400 focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/20"
+          />
+        </div>
+        <div>
+          <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-stone-700">
+            {t.email}
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            className="w-full rounded-xl border border-stone-200 bg-white px-4 py-3 text-sm text-stone-900 transition placeholder:text-stone-400 focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/20"
+          />
+        </div>
+        <div>
+          <label htmlFor="company" className="mb-1.5 block text-sm font-medium text-stone-700">
+            {t.company}
+          </label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            className="w-full rounded-xl border border-stone-200 bg-white px-4 py-3 text-sm text-stone-900 transition placeholder:text-stone-400 focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/20"
+          />
+        </div>
+        <div>
+          <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-stone-700">
+            {t.message}
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows={4}
+            required
+            className="w-full resize-none rounded-xl border border-stone-200 bg-white px-4 py-3 text-sm text-stone-900 transition placeholder:text-stone-400 focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/20"
+          />
+        </div>
+      </div>
+
+      {status === "success" && (
+        <p className="rounded-xl bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-700">
+          {t.success}
+        </p>
+      )}
+      {status === "error" && (
+        <p className="rounded-xl bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+          {t.error}
+        </p>
+      )}
+
+      <button
+        type="submit"
+        disabled={status === "sending"}
+        className="w-full rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[var(--accent-dark)] disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        {status === "sending" ? t.sending : t.submit}
+      </button>
+    </form>
   );
 }

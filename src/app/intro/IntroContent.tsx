@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-const EMAIL = "hello@outwardly.net";
+const EMAIL = "nikospg@gmail.com";
 
 const translations = {
   el: {
@@ -90,8 +90,8 @@ export function IntroContent({ defaultLocale }: { defaultLocale: Locale }) {
 
       <section className="overflow-hidden rounded-3xl border border-stone-900/10 bg-white shadow-lg">
         <iframe
-          src="https://cal.com/outwardly/intro?embed=1&primaryColor=2563eb"
-          title="OutWardly Intro Call Scheduler"
+          src="https://cal.com/ekfansis/intro?embed=1&primaryColor=c0392b"
+          title="ΕΚΦΑΝΣΙΣ Intro Call Scheduler"
           className="h-[720px] w-full"
           frameBorder="0"
           allow="camera; microphone; fullscreen"

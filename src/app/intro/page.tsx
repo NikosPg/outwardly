@@ -3,9 +3,9 @@ import { Suspense } from "react";
 import { IntroContent } from "./IntroContent";
 
 export const metadata: Metadata = {
-  title: "Book an Intro Call • OutWardly",
+  title: "Book an Intro Call • ΕΚΦΑΝΣΙΣ",
   description:
-    "Κλείστε ένα σύντομο intro call με την ομάδα της OutWardly και ξεκινήστε τη συζήτηση για το επόμενο ψηφιακό σας project.",
+    "Κλείστε ένα σύντομο intro call με την ομάδα της ΕΚΦΑΝΣΙΣ και ξεκινήστε τη συζήτηση για το επόμενο ψηφιακό σας project.",
 };
 
 export default function IntroPage({ searchParams }: { searchParams: { lang?: string } }) {
