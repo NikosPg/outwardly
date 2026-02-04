@@ -64,11 +64,12 @@ export function IntroContent({ defaultLocale }: { defaultLocale: Locale }) {
   const homeHref = useMemo(() => (locale === "en" ? "/?lang=en" : "/"), [locale]);
 
   return (
-    <div className="relative mx-auto flex max-w-5xl flex-col gap-12 px-6 py-16 sm:px-8 lg:py-24">
-      <div className="absolute left-6 top-6 flex items-center gap-3">
+    <div id="main-content" role="main" className="relative mx-auto flex max-w-5xl flex-col gap-12 px-6 py-16 sm:px-8 lg:py-24">
+      <nav aria-label="Πλοήγηση" className="absolute left-6 top-6 flex items-center gap-3">
         <Link
           href={homeHref}
           className="inline-flex items-center rounded-full border border-[var(--accent)]/40 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--accent)] shadow-sm backdrop-blur transition hover:bg-white"
+          aria-label={locale === "el" ? "Επιστροφή στην αρχική σελίδα" : "Return to homepage"}
         >
           {t.backHome}
         </Link>
@@ -80,21 +81,22 @@ export function IntroContent({ defaultLocale }: { defaultLocale: Locale }) {
         >
           {LOCALE_SWITCH[locale].label}
         </button>
-      </div>
+      </nav>
 
       <header className="mt-16 space-y-4 text-center sm:mt-0 sm:text-left">
-        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[var(--accent)]">{t.label}</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[var(--accent)]" aria-hidden="true">{t.label}</p>
         <h1 className="text-4xl font-semibold sm:text-5xl">{t.heading}</h1>
         <p className="text-base text-stone-600 sm:text-lg">{t.body}</p>
       </header>
 
-      <section className="flex flex-col items-center justify-center rounded-3xl border border-stone-900/10 bg-white p-12 shadow-lg">
-        <p className="mb-6 text-center text-lg text-stone-600">
+      <section aria-labelledby="contact-section" className="flex flex-col items-center justify-center rounded-3xl border border-stone-900/10 bg-white p-12 shadow-lg">
+        <p id="contact-section" className="mb-6 text-center text-lg text-stone-600">
           {t.emailPrompt}
         </p>
         <a
           className="inline-flex items-center justify-center rounded-full bg-[var(--accent)] px-8 py-4 text-base font-semibold text-white transition hover:bg-[var(--accent-dark)]"
           href={`mailto:${EMAIL}`}
+          aria-label={locale === "el" ? `Αποστολή email στο ${EMAIL}` : `Send email to ${EMAIL}`}
         >
           {EMAIL}
         </a>

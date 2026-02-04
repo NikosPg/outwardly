@@ -591,7 +591,7 @@ function HomeContent() {
         </div>
       </header>
 
-      <main className="mx-auto flex max-w-6xl flex-col gap-24 px-6 py-16 sm:px-8">
+      <main id="main-content" role="main" className="mx-auto flex max-w-6xl flex-col gap-24 px-6 py-16 sm:px-8">
         <section className="grid gap-8 rounded-3xl border border-[var(--accent)]/30 bg-gradient-to-br from-white via-[#eef3ff] to-[#dbe7ff] p-10 shadow-lg lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div className="space-y-6">
             <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--accent)]">
@@ -602,7 +602,7 @@ function HomeContent() {
             <ul className="space-y-3 text-sm text-stone-700">
               {t.customSoftware.bullets.map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]" />
+                  <span className="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]" aria-hidden="true" />
                   {item}
                 </li>
               ))}
@@ -764,17 +764,19 @@ function HomeContent() {
 
         <section
           id="contact"
+          aria-labelledby="contact-heading"
           className="relative overflow-hidden rounded-3xl border border-[var(--accent)]/30 bg-gradient-to-br from-[#e0ebff] via-[#f3f7ff] to-[var(--background)] p-10"
         >
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_bottom_right,_rgba(37,99,235,0.18)_0%,_transparent_55%)]" />
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_bottom_right,_rgba(37,99,235,0.18)_0%,_transparent_55%)]" aria-hidden="true" />
           <div className="space-y-6">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">{t.contact.label}</p>
-            <h2 className="text-3xl font-semibold sm:text-4xl">{t.contact.heading}</h2>
+            <h2 id="contact-heading" className="text-3xl font-semibold sm:text-4xl">{t.contact.heading}</h2>
             <p className="max-w-2xl text-base text-stone-700 sm:text-lg">{t.contact.description}</p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <a
                 className="inline-flex items-center justify-center rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[var(--accent-dark)]"
                 href={`mailto:${EMAIL}`}
+                aria-label={`Αποστολή email στο ${EMAIL}`}
               >
                 {EMAIL}
               </a>
@@ -783,24 +785,32 @@ function HomeContent() {
         </section>
       </main>
 
-      <footer className="border-t border-stone-300 bg-[#e7edff]">
+      <footer role="contentinfo" aria-label="Στοιχεία επικοινωνίας" className="border-t border-stone-300 bg-[#e7edff]">
         <div className="mx-auto grid max-w-6xl gap-6 px-6 py-8 text-sm text-stone-600 sm:grid-cols-3 sm:px-8">
           <div className="space-y-1 text-stone-700">
             <p className="font-semibold text-stone-900">© 2025 ΕΚΦΑΝΣΙΣ</p>
             <p>{t.footer.taxId}</p>
             <p>{t.footer.taxOffice}</p>
           </div>
-          <div className="space-y-1">
+          <div className="space-y-1" aria-label="Κωδικοί δραστηριότητας">
             {t.footer.activityCodes.map((code) => (
               <p key={code}>{code}</p>
             ))}
           </div>
           <div className="space-y-1">
             <p className="font-semibold text-stone-900">{t.footer.contactTitle}</p>
-            <a className="block hover:text-[var(--accent)]" href={`tel:${PHONE}`}>
+            <a
+              className="block hover:text-[var(--accent)]"
+              href={`tel:${PHONE}`}
+              aria-label={`Τηλεφωνική επικοινωνία: ${t.footer.phoneLabel}`}
+            >
               {t.footer.phoneLabel}
             </a>
-            <a className="block hover:text-[var(--accent)]" href={`mailto:${EMAIL}`}>
+            <a
+              className="block hover:text-[var(--accent)]"
+              href={`mailto:${EMAIL}`}
+              aria-label={`Αποστολή email στο ${EMAIL}`}
+            >
               {EMAIL}
             </a>
           </div>
