@@ -110,3 +110,59 @@ textarea:focus {
   background: rgba(192, 57, 43, 0.15);
   color: var(--foreground);
 }
+
+/* ===== ACCESSIBILITY WIDGET STYLES ===== */
+
+/* High contrast mode (manual toggle) */
+html.high-contrast {
+  --background: #fff;
+  --foreground: #000;
+  --accent: #000;
+  --accent-dark: #000;
+}
+
+html.high-contrast body {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+html.high-contrast a,
+html.high-contrast button {
+  color: #000 !important;
+  border-color: #000 !important;
+}
+
+html.high-contrast section,
+html.high-contrast div[class*="rounded"] {
+  border: 2px solid #000 !important;
+}
+
+/* Reduced motion (manual toggle) */
+html.reduced-motion *,
+html.reduced-motion *::before,
+html.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Dyslexia-friendly font */
+html.dyslexia-font body {
+  font-family: "OpenDyslexic", "Comic Sans MS", "Arial", sans-serif !important;
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
+  line-height: 1.8;
+}
+
+/* Highlight links */
+html.highlight-links a {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 3px !important;
+}
+
+html.highlight-links a:hover,
+html.highlight-links a:focus {
+  background-color: rgba(192, 57, 43, 0.1);
+}
