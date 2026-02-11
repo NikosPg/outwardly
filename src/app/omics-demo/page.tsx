@@ -250,7 +250,7 @@ export default function OmicsDemo() {
           </p>
           <div className="mt-6 flex justify-center gap-4">
             <a
-              href="mailto:ekfansis@gmail.com?subject=Omics%20Services%20Inquiry"
+              href="mailto:hello@ekfansis.com?subject=Omics%20Services%20Inquiry"
               className="inline-flex items-center justify-center rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[var(--accent-dark)]"
             >
               Contact Us

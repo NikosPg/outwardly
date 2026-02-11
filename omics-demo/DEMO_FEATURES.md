@@ -1,7 +1,7 @@
 # Online Omics Demo - Feature Overview
 
 ## Live Demo URL
-**https://outwardly.net/omics-demo**
+**https://ekfansis.com/omics-demo**
 
 ---
 
@@ -62,7 +62,7 @@ Most bioinformatics consultants offer:
 - ❌ Code repositories (not accessible)
 - ❌ Technical documentation only
 
-**OutWardly offers:**
+**ΕΚΦΑΝΣΙΣ offers:**
 - ✅ Live, interactive demos
 - ✅ Production-ready web apps
 - ✅ Beautiful UI/UX
@@ -73,7 +73,7 @@ Most bioinformatics consultants offer:
 ## User Journey
 
 ### Discovery
-1. Client visits OutWardly homepage
+1. Client visits ΕΚΦΑΝΣΙΣ homepage
 2. Sees "Omics & Bioinformatics" service
 3. Clicks "View Interactive Demo →"
 
@@ -84,7 +84,7 @@ Most bioinformatics consultants offer:
 7. Switches between tabs (Volcano, PCA, Table)
 
 ### Conversion
-8. Understands what OutWardly can build
+8. Understands what ΕΚΦΑΝΣΙΣ can build
 9. Clicks "Contact Us"
 10. Sends email with project details
 
@@ -179,7 +179,7 @@ Infrastructure (future):
 
 ## Business Value
 
-### For OutWardly
+### For ΕΚΦΑΝΣΙΣ
 - **Differentiation**: Unique offering in market
 - **Credibility**: Shows technical capability
 - **Lead generation**: Clear CTA
@@ -197,7 +197,7 @@ Infrastructure (future):
 
 ### For Interested Clients
 1. Click "Contact Us" button
-2. Email: hello@outwardly.net
+2. Email: hello@ekfansis.com
 3. Book intro call
 4. Get custom proposal
 
@@ -219,7 +219,7 @@ Infrastructure (future):
 "🧬 Just launched: Interactive omics demo! Explore RNA-seq results in your browser."
 
 ### Conference Presentations
-"Visit outwardly.net/omics-demo to see our platform in action"
+"Visit ekfansis.com/omics-demo to see our platform in action"
 
 ### Cold Outreach
 "Unlike typical bioinformatics consultants, we build interactive web applications. Here's a live demo: [link]"
@@ -267,7 +267,7 @@ After building real projects, add to demo:
 
 ## Competitive Advantage
 
-| Feature | Traditional Consultant | OutWardly |
+| Feature | Traditional Consultant | ΕΚΦΑΝΣΙΣ |
 |---------|----------------------|-----------|
 | Live Demo | ❌ | ✅ |
 | Web Interface | ❌ | ✅ |
@@ -280,4 +280,4 @@ After building real projects, add to demo:
 
 **The demo is your best salesperson.** It works 24/7, never gets tired, and always makes a perfect pitch.
 
-Contact: hello@outwardly.net
+Contact: hello@ekfansis.com

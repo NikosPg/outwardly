@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-const EMAIL = "ekfansis@gmail.com";
+const EMAIL = "hello@ekfansis.com";
 const PHONE = "+306945415350";
 
 const translations = {

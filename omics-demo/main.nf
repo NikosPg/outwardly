@@ -1,7 +1,7 @@
 #!/usr/bin/env nextflow
 /*
  * RNA-seq Differential Expression Analysis Pipeline
- * OutWardly Bioinformatics
+ * ΕΚΦΑΝΣΙΣ Bioinformatics
  *
  * This pipeline performs:
  * - Quality control (FastQC, MultiQC)
@@ -17,7 +17,7 @@ nextflow.enable.dsl = 2
 log.info """
     ==========================================
     RNA-seq Analysis Pipeline
-    OutWardly Omics & Bioinformatics
+    ΕΚΦΑΝΣΙΣ Omics & Bioinformatics
     ==========================================
     reads      : ${params.reads}
     outdir     : ${params.outdir}

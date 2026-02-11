@@ -1,6 +1,6 @@
 """
 RNA-seq Analysis Pipeline with Snakemake
-OutWardly Bioinformatics Demo
+ΕΚΦΑΝΣΙΣ Bioinformatics Demo
 """
 
 configfile: "config.yaml"

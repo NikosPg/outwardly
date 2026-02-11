@@ -2,7 +2,7 @@
 
 ## Online Demo
 
-🎉 **Live URL:** `https://outwardly.net/omics-demo`
+🎉 **Live URL:** `https://ekfansis.com/omics-demo`
 
 The demo is now accessible online! Πελάτες μπορούν να το δουν απευθείας στο browser τους.
 
@@ -66,13 +66,13 @@ The demo is now accessible online! Πελάτες μπορούν να το δο�
 ## How to Access
 
 ### From Main Page
-1. Πήγαινε στο https://outwardly.net
+1. Πήγαινε στο https://ekfansis.com
 2. Scroll στο "Services" section
 3. Βρες την κάρτα "🧬 Omics & Bioinformatics"
 4. Κάνε κλικ στο "View Interactive Demo →"
 
 ### Direct Link
-https://outwardly.net/omics-demo
+https://ekfansis.com/omics-demo
 
 ## Code Structure
 
@@ -160,5 +160,5 @@ npm start
 
 ---
 
-**Created by OutWardly**
-Contact: hello@outwardly.net
+**Created by ΕΚΦΑΝΣΙΣ**
+Contact: hello@ekfansis.com

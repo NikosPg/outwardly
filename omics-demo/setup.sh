@@ -5,7 +5,7 @@ set -e
 
 echo "=========================================="
 echo "RNA-seq Analysis Pipeline Setup"
-echo "OutWardly Omics & Bioinformatics"
+echo "ΕΚΦΑΝΣΙΣ Omics & Bioinformatics"
 echo "=========================================="
 echo ""
 
@@ -46,5 +46,5 @@ echo ""
 echo "5. Visualize the workflow:"
 echo "   snakemake --dag | dot -Tpng > workflow.png"
 echo ""
-echo "For help: hello@outwardly.net"
+echo "For help: hello@ekfansis.com"
 echo "=========================================="

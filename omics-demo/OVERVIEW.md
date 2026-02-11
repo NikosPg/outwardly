@@ -1,8 +1,8 @@
-# OutWardly Omics & Bioinformatics Services
+# ΕΚΦΑΝΣΙΣ Omics & Bioinformatics Services
 
 ## Overview
 
-OutWardly extends its expertise in web development and custom software to the field of **omics sciences**, combining:
+ΕΚΦΑΝΣΙΣ extends its expertise in web development and custom software to the field of **omics sciences**, combining:
 
 - **Genomics, Transcriptomics, Proteomics, Metabolomics, Epigenomics**
 - **Data Engineering & AI/ML**
@@ -71,7 +71,7 @@ Scale your analysis to the cloud:
 
 ---
 
-## Why Choose OutWardly for Omics?
+## Why Choose ΕΚΦΑΝΣΙΣ for Omics?
 
 ### Unique Combination of Skills
 
@@ -215,17 +215,17 @@ Sprint-based delivery (2-week cycles):
 
 ## Contact
 
-**Email:** hello@outwardly.net
+**Email:** hello@ekfansis.com
 **Phone:** +30 694 541 5350
-**Website:** https://outwardly.net
+**Website:** https://ekfansis.com
 
 **Location:** Patras, Greece (Remote-friendly)
 
 ---
 
-## About OutWardly
+## About ΕΚΦΑΝΣΙΣ
 
-OutWardly is a creative studio and custom software agency specializing in:
+ΕΚΦΑΝΣΙΣ is a creative studio and custom software agency specializing in:
 - Web design & development
 - Custom software delivery
 - Omics & bioinformatics
@@ -236,4 +236,4 @@ We combine strategic thinking, clean design, and robust engineering to deliver d
 
 ---
 
-**© 2025 OutWardly** | VAT: 116201133 | Tax Office: Patras, Greece
+**© 2025 ΕΚΦΑΝΣΙΣ** | VAT: 116201133 | Tax Office: Patras, Greece

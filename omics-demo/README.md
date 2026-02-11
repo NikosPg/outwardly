@@ -102,4 +102,4 @@ This demo uses data from GEO (Gene Expression Omnibus):
 ## Contact
 
 For custom bioinformatics workflows and omics analysis:
-hello@outwardly.net
+hello@ekfansis.com
