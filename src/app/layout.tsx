@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/ekfansis-logo.png",
-        width: 1536,
-        height: 1024,
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
         alt: "ΕΚΦΑΝΣΙΣ – Creative Studio & Custom Software",
       },
     ],
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "ΕΚΦΑΝΣΙΣ – Creative Studio & Custom Software",
     description:
       "Στρατηγική, design, ανάπτυξη και φιλοξενία σε ένα ενιαίο digital studio.",
-    images: ["/ekfansis-logo.png"],
+    images: ["/og-image.png"],
   },
 };
 
