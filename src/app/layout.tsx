@@ -30,12 +30,21 @@ export const metadata: Metadata = {
     siteName: "ΕΚΦΑΝΣΙΣ",
     locale: "el_GR",
     type: "website",
+    images: [
+      {
+        url: "/ekfansis-logo.png",
+        width: 1536,
+        height: 1024,
+        alt: "ΕΚΦΑΝΣΙΣ – Creative Studio & Custom Software",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "ΕΚΦΑΝΣΙΣ – Creative Studio & Custom Software",
     description:
       "Στρατηγική, design, ανάπτυξη και φιλοξενία σε ένα ενιαίο digital studio.",
+    images: ["/ekfansis-logo.png"],
   },
 };
 
