@@ -111,6 +111,21 @@ textarea:focus {
   color: var(--foreground);
 }
 
+/* ===== CAROUSEL ===== */
+
+[aria-roledescription="carousel"] {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+[aria-roledescription="carousel"] [style*="touch-action"] {
+  cursor: grab;
+}
+
+[aria-roledescription="carousel"] [style*="touch-action"]:active {
+  cursor: grabbing;
+}
+
 /* ===== ACCESSIBILITY WIDGET STYLES ===== */
 
 /* High contrast mode (manual toggle) */

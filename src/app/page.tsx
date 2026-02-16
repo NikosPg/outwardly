@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { ProjectCarousel } from "./components/ProjectCarousel";
 
 const EMAIL = "hello@ekfansis.com";
 const PHONE = "+306945415350";
@@ -126,6 +127,9 @@ const translations = {
       primaryButton: "Συνεργασία",
       secondaryLink: "Θέλω να συζητήσουμε →",
       mailtoSubject: "Νέο project για το portfolio",
+      carouselPrev: "Προηγούμενο project",
+      carouselNext: "Επόμενο project",
+      carouselSlideLabel: "Project {current} από {total}",
     },
     projects: [
       {
@@ -135,6 +139,7 @@ const translations = {
           "Χτίζουμε το νέο e-commerce για lingerie με καθαρή εμπειρία αγορών, omnichannel integrations και storytelling που αναδεικνύει το brand.",
         cta: "Σε εξέλιξη",
         href: "https://dinalingerie.gr",
+        image: "/projects/dinalingerie.webp",
       },
       {
         title: "findteacher.gr",
@@ -143,6 +148,7 @@ const translations = {
           "Ξανασχεδιάσαμε τη διαδικασία εύρεσης καθηγητή: φίλτρα για επίπεδο, μάθημα και διαθεσιμότητα, με responsive UI που φορτώνει αστραπιαία και backend που χειρίζεται ασφαλείς κρατήσεις.",
         cta: "Δες το project →",
         href: "https://findteacher.gr",
+        image: "/projects/findteacher.webp",
       },
       {
         title: "radioportal.me",
@@ -151,6 +157,7 @@ const translations = {
           "Ανανεώσαμε το radio streaming hub με custom player, real-time ενημέρωση προγράμματος και SEO-first αρχιτεκτονική ώστε να διαχειρίζεται χιλιάδες ακροατές χωρίς downtime.",
         cta: "Δες το project →",
         href: "https://radioportal.me",
+        image: "/projects/radioportal.webp",
       },
       {
         title: "314project.gr",
@@ -159,6 +166,7 @@ const translations = {
           "Δημιουργήσαμε την ψηφιακή παρουσία ενός πολυχώρου εκδηλώσεων, εκθέσεων και καφέ μπαρ με έμφαση στο storytelling, την εμπειρία του χρήστη και την εύκολη πλοήγηση.",
         cta: "Δες το project →",
         href: "https://314project.gr",
+        image: "/projects/314project.webp",
       },
     ],
     methodology: {
@@ -364,6 +372,9 @@ const translations = {
       primaryButton: "Start a project",
       secondaryLink: "Let's talk →",
       mailtoSubject: "New project for the portfolio",
+      carouselPrev: "Previous project",
+      carouselNext: "Next project",
+      carouselSlideLabel: "Project {current} of {total}",
     },
     projects: [
       {
@@ -373,6 +384,7 @@ const translations = {
           "We are crafting the new lingerie e-commerce experience with clean UX, omnichannel integrations, and storytelling that elevates the brand.",
         cta: "In progress",
         href: "https://dinalingerie.gr",
+        image: "/projects/dinalingerie.webp",
       },
       {
         title: "findteacher.gr",
@@ -381,6 +393,7 @@ const translations = {
           "We redesigned the teacher discovery journey: filters by level, subject, and availability, with a lightning-fast responsive UI and a backend that handles secure bookings.",
         cta: "View project →",
         href: "https://findteacher.gr",
+        image: "/projects/findteacher.webp",
       },
       {
         title: "radioportal.me",
@@ -389,6 +402,7 @@ const translations = {
           "We refreshed the radio streaming hub with a custom player, real-time schedule updates, and SEO-first architecture that serves thousands of listeners without downtime.",
         cta: "View project →",
         href: "https://radioportal.me",
+        image: "/projects/radioportal.webp",
       },
       {
         title: "314project.gr",
@@ -397,6 +411,7 @@ const translations = {
           "We created the digital presence for a multifunctional event space, exhibition venue, and café bar with focus on storytelling, user experience, and seamless navigation.",
         cta: "View project →",
         href: "https://314project.gr",
+        image: "/projects/314project.webp",
       },
     ],
     methodology: {
@@ -684,27 +699,14 @@ function HomeContent() {
               </a>
             </div>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2">
-            {t.projects.map((project) => (
-              <a
-                key={project.title + project.subtitle}
-                className="flex h-full flex-col gap-4 rounded-2xl border border-stone-900/10 bg-gradient-to-br from-white to-[#e6f0ff] p-6 transition hover:-translate-y-1 hover:border-[var(--accent)]/50 hover:shadow-lg"
-                href={project.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">{project.subtitle}</p>
-                  <h3 className="mt-2 text-xl font-semibold text-stone-900">{project.title}</h3>
-                </div>
-                <p className="text-sm text-stone-600">{project.description}</p>
-                <span className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)]">
-                  {project.cta}
-                  <span aria-hidden className="block h-2 w-2 rounded-full bg-[var(--accent)]" />
-                </span>
-              </a>
-            ))}
-          </div>
+          <ProjectCarousel
+            projects={t.projects}
+            ariaLabels={{
+              prev: t.projectsSection.carouselPrev,
+              next: t.projectsSection.carouselNext,
+              slideLabel: t.projectsSection.carouselSlideLabel,
+            }}
+          />
         </section>
 
         <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
