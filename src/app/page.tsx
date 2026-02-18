@@ -10,6 +10,16 @@ const PHONE = "+306945415350";
 
 const translations = {
   el: {
+    nav: {
+      services: "Υπηρεσίες",
+      projects: "Projects",
+      methodology: "Μεθοδολογία",
+      whyUs: "Γιατί εμάς",
+      philosophy: "Φιλοσοφία",
+      contact: "Επικοινωνία",
+      menuOpen: "Άνοιγμα μενού",
+      menuClose: "Κλείσιμο μενού",
+    },
     hero: {
       heading: "Χτίζουμε custom ψηφιακές εμπειρίες και λογισμικό για την ομάδα σας.",
       body: "Από τη στρατηγική έως την υποστήριξη, η ομάδα μας σχεδιάζει, υλοποιεί και εξελίσσει την παρουσία σας στο διαδίκτυο. Μιλάμε τη γλώσσα της επιχείρησης και μεταφράζουμε τις ανάγκες σας σε κώδικα, design και μετρήσιμα αποτελέσματα.",
@@ -255,6 +265,16 @@ const translations = {
     },
   },
   en: {
+    nav: {
+      services: "Services",
+      projects: "Projects",
+      methodology: "Methodology",
+      whyUs: "Why us",
+      philosophy: "Philosophy",
+      contact: "Contact",
+      menuOpen: "Open menu",
+      menuClose: "Close menu",
+    },
     hero: {
       heading: "We craft custom digital experiences and software for your team.",
       body: "From strategy to support, our team designs, builds, and evolves your online presence. We speak the language of business and translate your needs into code, design, and measurable outcomes.",
@@ -524,6 +544,7 @@ function HomeContent() {
   const [locale, setLocaleState] = useState<Locale>(() =>
     searchParams.get("lang") === "en" ? "en" : "el",
   );
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const paramLocale = searchParams.get("lang") === "en" ? "en" : "el";
@@ -553,17 +574,96 @@ function HomeContent() {
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      {/* Sticky navigation */}
+      <nav className="sticky top-0 z-50 border-b border-stone-900/10 bg-white/90 backdrop-blur" aria-label="Main navigation">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 lg:px-8">
+          <a href="#" className="text-sm font-bold tracking-wide text-stone-900">ΕΚΦΑΝΣΙΣ</a>
+
+          {/* Desktop links */}
+          <div className="hidden items-center gap-6 md:flex">
+            {([
+              ["#services", t.nav.services],
+              ["#projects", t.nav.projects],
+              ["#methodology", t.nav.methodology],
+              ["#why-us", t.nav.whyUs],
+              ["#philosophy", t.nav.philosophy],
+              ["#contact", t.nav.contact],
+            ] as const).map(([href, label]) => (
+              <a
+                key={href}
+                href={href}
+                className="text-sm text-stone-600 transition hover:text-[var(--accent)]"
+              >
+                {label}
+              </a>
+            ))}
+            <button
+              type="button"
+              onClick={() => handleLocaleChange(LOCALE_SWITCH[locale].next)}
+              className="rounded-full border border-[var(--accent)]/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)] transition hover:bg-[var(--accent)] hover:text-white"
+              aria-label={LOCALE_SWITCH[locale].aria}
+            >
+              {LOCALE_SWITCH[locale].label}
+            </button>
+          </div>
+
+          {/* Mobile: lang + hamburger */}
+          <div className="flex items-center gap-3 md:hidden">
+            <button
+              type="button"
+              onClick={() => handleLocaleChange(LOCALE_SWITCH[locale].next)}
+              className="rounded-full border border-[var(--accent)]/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]"
+              aria-label={LOCALE_SWITCH[locale].aria}
+            >
+              {LOCALE_SWITCH[locale].label}
+            </button>
+            <button
+              type="button"
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="flex h-9 w-9 items-center justify-center rounded-lg text-stone-700 transition hover:bg-stone-100"
+              aria-label={menuOpen ? t.nav.menuClose : t.nav.menuOpen}
+              aria-expanded={menuOpen}
+            >
+              {menuOpen ? (
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile dropdown */}
+        {menuOpen && (
+          <div className="border-t border-stone-900/10 bg-white px-6 pb-4 pt-2 md:hidden">
+            {([
+              ["#services", t.nav.services],
+              ["#projects", t.nav.projects],
+              ["#methodology", t.nav.methodology],
+              ["#why-us", t.nav.whyUs],
+              ["#philosophy", t.nav.philosophy],
+              ["#contact", t.nav.contact],
+            ] as const).map(([href, label]) => (
+              <a
+                key={href}
+                href={href}
+                onClick={() => setMenuOpen(false)}
+                className="block py-2 text-sm text-stone-600 transition hover:text-[var(--accent)]"
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+        )}
+      </nav>
+
       <header className="relative isolate overflow-hidden bg-white/80">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(37,99,235,0.22)_0%,_transparent_58%)]" />
-        <button
-          type="button"
-          onClick={() => handleLocaleChange(LOCALE_SWITCH[locale].next)}
-          className="absolute right-6 top-6 inline-flex items-center justify-center rounded-full border border-[var(--accent)]/40 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--accent)] shadow-sm backdrop-blur transition hover:bg-white"
-          aria-label={LOCALE_SWITCH[locale].aria}
-        >
-          {LOCALE_SWITCH[locale].label}
-        </button>
-        <div className="mx-auto max-w-6xl px-6 pb-24 pt-16 sm:pb-28 sm:pt-24 lg:px-8">
+        <div className="mx-auto max-w-6xl px-6 pb-24 pt-16 sm:pb-28 sm:pt-20 lg:px-8">
           <div className="mb-12">
             <Image
               src="/ekfansis-logo.svg"
@@ -677,7 +777,7 @@ function HomeContent() {
           </div>
         </section>
 
-        <section className="space-y-10 rounded-3xl border border-stone-900/10 bg-white p-10 shadow-lg">
+        <section id="projects" className="space-y-10 rounded-3xl border border-stone-900/10 bg-white p-10 shadow-lg">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="space-y-2">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">{t.projectsSection.label}</p>
@@ -709,7 +809,7 @@ function HomeContent() {
           />
         </section>
 
-        <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <section id="methodology" className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-6">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">{t.methodology.label}</p>
             <h2 className="text-3xl font-semibold sm:text-4xl">{t.methodology.heading}</h2>
@@ -731,7 +831,7 @@ function HomeContent() {
           </div>
         </section>
 
-        <section className="grid gap-10 rounded-3xl border border-stone-900/10 bg-white p-10 shadow-sm lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <section id="why-us" className="grid gap-10 rounded-3xl border border-stone-900/10 bg-white p-10 shadow-sm lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-6">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">{t.whyUs.label}</p>
             <h2 className="text-3xl font-semibold sm:text-4xl">{t.whyUs.heading}</h2>
@@ -750,7 +850,7 @@ function HomeContent() {
           </ul>
         </section>
 
-        <section className="rounded-3xl border border-stone-900/10 bg-white p-10 shadow-sm">
+        <section id="philosophy" className="rounded-3xl border border-stone-900/10 bg-white p-10 shadow-sm">
           <div className="space-y-4">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
               {t.philosophy.label}
