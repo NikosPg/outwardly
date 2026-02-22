@@ -178,6 +178,15 @@ const translations = {
         href: "https://314project.gr",
         image: "/projects/314project.webp",
       },
+      {
+        title: "kspkre.com",
+        subtitle: "Real Estate • Marketplace",
+        description:
+          "Σχεδιάσαμε και αναπτύξαμε πλατφόρμα αγγελιών ακινήτων με advanced αναζήτηση, φίλτρα κατηγορίας και περιοχής, και καθαρό UI για αγοραστές και επαγγελματίες του κλάδου.",
+        cta: "Δες το project →",
+        href: "https://kspkre.com",
+        image: "/projects/kspkre.webp",
+      },
     ],
     methodology: {
       label: "Μεθοδολογία",
@@ -432,6 +441,15 @@ const translations = {
         cta: "View project →",
         href: "https://314project.gr",
         image: "/projects/314project.webp",
+      },
+      {
+        title: "kspkre.com",
+        subtitle: "Real Estate • Marketplace",
+        description:
+          "We designed and built a real estate listings platform with advanced search, category and location filters, and a clean UI serving both buyers and industry professionals.",
+        cta: "View project →",
+        href: "https://kspkre.com",
+        image: "/projects/kspkre.webp",
       },
     ],
     methodology: {
