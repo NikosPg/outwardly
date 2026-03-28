@@ -187,6 +187,15 @@ const translations = {
         href: "https://kspkre.com",
         image: "/projects/kspkre.webp",
       },
+      {
+        title: "chess.outwardly.net",
+        subtitle: "PWA • Σκάκι",
+        description:
+          "Εργαλεία ανάλυσης και εκπαίδευσης σκακιού ως δωρεάν PWA: το προσθέτεις στο κινητό σου μέσω Chrome και έχεις PGN viewer και εκπαίδευση κινήσεων — μια δωρεάν λύση που έλειπε παγκόσμια.",
+        cta: "Δες το project →",
+        href: "https://chess.outwardly.net",
+        image: "/projects/chess.webp",
+      },
     ],
     methodology: {
       label: "Μεθοδολογία",
@@ -450,6 +459,15 @@ const translations = {
         cta: "View project →",
         href: "https://kspkre.com",
         image: "/projects/kspkre.webp",
+      },
+      {
+        title: "chess.outwardly.net",
+        subtitle: "PWA • Chess",
+        description:
+          "Free chess analysis and training tools as a PWA: add it to your phone via Chrome and get a PGN viewer and move training — a free solution that was missing worldwide.",
+        cta: "View project →",
+        href: "https://chess.outwardly.net",
+        image: "/projects/chess.webp",
       },
     ],
     methodology: {
