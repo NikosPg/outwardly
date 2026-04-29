@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ProjectCarousel } from "./components/ProjectCarousel";
+import { EUFundingBanner } from "./components/EUFundingBanner";
 
 const EMAIL = "hello@ekfansis.com";
 const PHONE = "+306945415350";
@@ -922,6 +923,8 @@ function HomeContent() {
           </div>
         </section>
       </main>
+
+      <EUFundingBanner />
 
       <footer role="contentinfo" aria-label="Στοιχεία επικοινωνίας" className="border-t border-stone-300 bg-[#e7edff]">
         <div className="mx-auto grid max-w-6xl gap-6 px-6 py-8 text-sm text-stone-600 sm:grid-cols-3 sm:px-8">
