@@ -10,7 +10,7 @@ export function EUFundingBanner() {
       <img
         src="/greece20-banner.jpg"
         alt="Ελλάδα 2.0 – Με τη χρηματοδότηση της Ευρωπαϊκής Ένωσης NextGenerationEU – ΔΥΠΑ"
-        className="h-14 w-full object-cover object-center"
+        className="h-10 w-full object-contain bg-[#003DA5]"
       />
     </a>
   );
