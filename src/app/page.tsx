@@ -611,7 +611,6 @@ function HomeContent() {
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-      <EUFundingBanner />
       {/* Sticky navigation */}
       <nav className="sticky top-0 z-50 border-b border-stone-900/10 bg-white/90 backdrop-blur" aria-label="Main navigation">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 lg:px-8">
@@ -701,6 +700,9 @@ function HomeContent() {
 
       <header className="relative isolate overflow-hidden bg-white/80">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(37,99,235,0.22)_0%,_transparent_58%)]" />
+        <div className="px-4 pt-3">
+          <EUFundingBanner />
+        </div>
         <div className="mx-auto max-w-6xl px-6 pb-24 pt-16 sm:pb-28 sm:pt-20 lg:px-8">
           <div className="mb-12">
             <Image
