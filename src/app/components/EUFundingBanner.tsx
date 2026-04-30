@@ -5,12 +5,12 @@ export function EUFundingBanner() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Ελλάδα 2.0 – Εθνικό Σχέδιο Ανάκαμψης και Ανθεκτικότητας (ανοίγει σε νέα καρτέλα)"
-      className="block"
+      className="inline-block"
     >
       <img
         src="/greece20-banner.jpg"
         alt="Ελλάδα 2.0 – Με τη χρηματοδότηση της Ευρωπαϊκής Ένωσης NextGenerationEU – ΔΥΠΑ"
-        className="h-10 w-full object-contain bg-[#003DA5]"
+        className="h-10 w-auto"
       />
     </a>
   );
