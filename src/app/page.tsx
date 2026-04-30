@@ -611,6 +611,7 @@ function HomeContent() {
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <EUFundingBanner />
       {/* Sticky navigation */}
       <nav className="sticky top-0 z-50 border-b border-stone-900/10 bg-white/90 backdrop-blur" aria-label="Main navigation">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 lg:px-8">
@@ -923,8 +924,6 @@ function HomeContent() {
           </div>
         </section>
       </main>
-
-      <EUFundingBanner />
 
       <footer role="contentinfo" aria-label="Στοιχεία επικοινωνίας" className="border-t border-stone-300 bg-[#e7edff]">
         <div className="mx-auto grid max-w-6xl gap-6 px-6 py-8 text-sm text-stone-600 sm:grid-cols-3 sm:px-8">
